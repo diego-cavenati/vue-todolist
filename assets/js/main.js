@@ -59,6 +59,17 @@ createApp({
                 this.newTask = '';
             }
         },
+        done(index){
+            this.tasks.splice(index, 1);
+        },
+        mark(index){
+
+            if (this.tasks[index].done == true) {
+                this.tasks[index].done = false;
+            } else 
+            this.tasks[index].done = true;
+            
+        }
     }
 }).mount('#app')
 

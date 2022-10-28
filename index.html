@@ -23,18 +23,20 @@
                     <h3 class="my-2">Add new task</h3>
                     <input type="text" v-model="newTask" @keyup.enter="addTask">
                     <button @click.stop="addTask">Add Task</button>
+                    <small class="text-danger" v-show="error">Devi inserire una task di almeno 5 caratteri</small>
                 </div>
 
                 <div class="taskList">
                     <h3 class="my-4">To do</h3>
-                    <ul>
+                    <ul v-if="tasks.length !== 0">
 
-                        <li v-for="(element, index) in tasks" >
+                        <li :class="element.done == true ? 'done' : ''" v-for="(element, index) in tasks" v-on:click="mark(index)">
                             {{ element.text }} 
-                            <i class="fa-solid fa-x" ></i>
+                            <i class="fa-solid fa-x" v-on:click="done(index)"></i>
                         </li>
 
                     </ul>
+                    <p v-else="">Bravo! Sei libero</p>
                 </div>
 
             </div>
