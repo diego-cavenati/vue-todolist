@@ -42,6 +42,23 @@ createApp({
             ],
         }
     },
+    methods:{
+        addTask(){
+            if (this.newTask.length < 5) {
+                this.error = true;
+            } else {
+                this.error = false; 
 
+                this.tasks.unshift(
+                    {
+                        text: this.newTask,
+                        done: false,
+                    },    
+                );
+
+                this.newTask = '';
+            }
+        },
+    }
 }).mount('#app')
 
