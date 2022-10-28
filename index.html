@@ -15,13 +15,35 @@
         <link rel='stylesheet' href='./assets/css/style.css'>
     </head>
     <body>
-        
 
+        <div id="app" class="text-center">
+            <div class="container">
 
+                <div class="addTask">
+                    <h3 class="my-2">Add new task</h3>
+                    <input type="text">
+                    <button>Add Task</button>
+                    <small class="text-danger">Devi inserire una task di almeno 5 caratteri</small>
+                </div>
+
+                <div class="taskList">
+                    <h3 class="my-4">To do</h3>
+                    <ul>
+                        <li>
+                            {{ element.text }} 
+                            <i class="fa-solid fa-x"></i>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
 
         <!-- Vue script -->
-        <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
         <!-- Personal script -->
+        <!-- <script src='./assets/js/main.js' type="module"></script> -->
+        <script src='https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js'></script>
         <script src='./assets/js/main.js'></script>
         <!-- Bootstrap script -->
         <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js' integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3' crossorigin='anonymous'></script>
