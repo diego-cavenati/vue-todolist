@@ -23,7 +23,7 @@
                     <h3 class="my-2">Add new task</h3>
                     <input type="text" v-model="newTask" @keyup.enter="addTask">
                     <button @click.stop="addTask">Add Task</button>
-                    <small class="text-danger" v-show="error">Devi inserire una task di almeno 5 caratteri</small>
+                    <small class="text-danger" v-show="error">Devi inserire una task di almeno 5 caratteri, non inserire solo gli spazi</small>
                 </div>
 
                 <div class="taskList">

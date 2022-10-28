@@ -44,14 +44,18 @@ createApp({
     },
     methods:{
         addTask(){
+
+
             if (this.newTask.length < 5) {
+                this.error = true;
+            } else if (this.newTask.trim() == (" " * this.newTask.length)) {
                 this.error = true;
             } else {
                 this.error = false; 
 
                 this.tasks.unshift(
                     {
-                        text: this.newTask,
+                        text: this.newTask.trim(),
                         done: false,
                     },    
                 );
